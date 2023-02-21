@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Widget Interaction</title>
+    <script src ="../../common/scripts/jquery-1.9.1.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="http://uwa.netvibes.com/lib/c/UWA/assets/css/standalone.css" />
+
+    <script type="text/javascript" src="http://uwa.netvibes.com/lib/c/UWA/js/UWA_Standalone_Alone.js"></script>
+   <!-- Widget files -->
+    <link rel="stylesheet" type="text/css" href="styles/Main.css"/>
+	<script type="text/javascript" src="scripts/Subscribe.js"></script>
+
+    <!-- Application Preferences -->
+	<widget:preferences>
+		<widget:preference type="text" name="Preference1" label="Type of Object" defaultValue='preference 1 value' />
+		<widget:preference type="text" name="UserName" label="User Name" defaultValue='Toto' />
+	</widget:preferences>
+
+    <script type="text/javascript">
+		function widgetLoading() {
+			if (widget) {
+				executeWidgetCode();
+			} else {
+				console.warn("Defered widget Loading");
+				setTimeout(widgetLoading, 100);
+			}
+		}
+		widgetLoading();
+	</script>
+	
+</head>
+<body>
+    
+</body>
+</html>
